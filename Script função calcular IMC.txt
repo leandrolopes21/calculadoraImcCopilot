@@ -1,0 +1,33 @@
+<script>
+
+	function calcularImc() {
+
+		const height = parseFloat(document.getElementById('height').value);
+		const weight = parseFloat(document.getElementById('weight').value);
+		const result = document.getElementById('result');
+
+		if (isNaN(height) || isNaN(weight)) {
+
+			result.innerHTML = 'Por favor, insira valores válidos.';
+			return;
+
+		const imc = weight / (height * height);
+		var classificacao = '';
+
+		if ( imc < 18.5) {
+			classificacao = 'Magreza';
+		} else if ( imc < 24.9) {
+			classificacao = 'Normal';
+		} else if ( imc < 29.9) {
+			classificacao = 'Sobrepeso';
+		} else if ( imc < 39.9) {
+			classificacao = 'Obesidade';
+		} else {
+			classificacao = 'Obesidade Grave';
+		}
+
+		result.innerHTML = `Seu IMC é ${imc.toFixed(2)} (${classificacao}).`;
+
+	}
+
+</script>
