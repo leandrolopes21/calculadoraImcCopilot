@@ -28,10 +28,10 @@
 <body>
     <div class="container">
         <h1>Calculadora de IMC</h1>
-        <label for="height">Altura (m):</label>
-        <input type="number" id="height" step="0.01"><br><br>
-        <label for="weight">Peso (kg):</label>
-        <input type="number" id="weight"><br><br>
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura" step="0.01"><br><br>
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso"><br><br>
         <button onclick="calculateBMI()">Calcular IMC</button>
         <div class="result" id="result"></div>
     </div>
@@ -40,16 +40,16 @@
 <script>
     
     function calculateBMI() {
-        const height = parseFloat(document.getElementById('height').value);
-        const weight = parseFloat(document.getElementById('weight').value);
+        const altura = parseFloat(document.getElementById('altura').value);
+        const peso = parseFloat(document.getElementById('peso').value);
         const result = document.getElementById('result');
     
-        if (isNaN(height) || isNaN(weight)) {
+        if (isNaN(altura) || isNaN(peso)) {
             result.innerHTML = 'Por favor, insira valores válidos.';
             return;
         }
     
-        const bmi = weight / (height * height);
+        const bmi = peso / (altura * altura);
         let classification = '';
     
         if (bmi < 18.5) {
